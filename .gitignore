@@ -1,0 +1,5 @@
+poetry.lock
+.python-version
+.DS_Store
+__pycache__
+todo

@@ -1,0 +1,23 @@
+[project]
+name = "fontgit"
+version = "0.0.1"
+description = ""
+authors = [
+    {name = "Bahman Eslami",email = "eslami.bahman@gmail.com"}
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fs (>=2.4.16,<3.0.0)",
+    "ufolib2 (>=0.17.1,<0.18.0)",
+    "gitpython (>=3.1.44,<4.0.0)",
+]
+
+[tool.poetry]
+packages = [{include = "fontgit", from = "src"}]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
