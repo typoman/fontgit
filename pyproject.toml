@@ -1,6 +1,6 @@
 [project]
-name = "fontgit"
-version = "0.0.2"
+name = "fontGit"
+version = "0.0.3"
 description = ""
 authors = [
     {name = "Bahman Eslami",email = "eslami.bahman@gmail.com"}
