@@ -18,7 +18,7 @@ from ufoLib2.objects.guideline import Guideline
 from ufoLib2.objects.imageSet import ImageSet
 from ufoLib2.objects.info import Info
 from ufoLib2.objects.kerning import Kerning
-from ufoLib2.objects.layerSet import LayerSet
+from fontGit.objects.layerSet import LayerSet
 from ufoLib2.objects.lib import (
     Lib,
     _get_lib,
