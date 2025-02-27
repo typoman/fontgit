@@ -60,7 +60,7 @@ class LayerSet:
             font.layers["myLayerName"]
     """
 
-    _layers: Dict[str, Layer] = field()
+    _layers: Dict[str, Layer] = field(factory=dict)
     _defaultLayer: Layer = field(default=_LAYER_NOT_LOADED, eq=False)
     _reader: Optional[UFOReader] = field(default=None, init=False, eq=False)
 
