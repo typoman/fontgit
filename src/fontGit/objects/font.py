@@ -13,7 +13,7 @@ from fontGit.utils import GitCommitFS
 from fontTools.ufoLib import UFOReader
 from ufoLib2.objects.dataSet import DataSet
 from ufoLib2.objects.features import Features
-from ufoLib2.objects.glyph import Glyph
+from fontGit.objects.glyph import Glyph
 from ufoLib2.objects.guideline import Guideline
 from ufoLib2.objects.imageSet import ImageSet
 from ufoLib2.objects.info import Info
