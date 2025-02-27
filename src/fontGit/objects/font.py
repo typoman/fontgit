@@ -1,22 +1,16 @@
 from __future__ import annotations
-import os
 from typing import (
     Any,
     Dict,
-    Iterable,
     Iterator,
     KeysView,
     List,
-    Mapping,
-    MutableMapping,
-    Optional,
     Sequence,
     cast,
 )
 from attrs import define, field
 from fontGit.utils import GitCommitFS
-from fontTools.ufoLib import UFOFileStructure, UFOReader
-from ufoLib2.constants import DEFAULT_LAYER_NAME
+from fontTools.ufoLib import UFOReader
 from ufoLib2.objects.dataSet import DataSet
 from ufoLib2.objects.features import Features
 from ufoLib2.objects.glyph import Glyph
@@ -24,17 +18,14 @@ from ufoLib2.objects.guideline import Guideline
 from ufoLib2.objects.imageSet import ImageSet
 from ufoLib2.objects.info import Info
 from ufoLib2.objects.kerning import Kerning
-from ufoLib2.objects.layer import Layer
 from ufoLib2.objects.layerSet import LayerSet
 from ufoLib2.objects.lib import (
     Lib,
     _get_lib,
     _get_tempLib,
 )
-from ufoLib2.objects.misc import (
-    _object_lib,
-)
-from ufoLib2.typing import HasIdentifier, PathLike, T
+
+from ufoLib2.typing import PathLike, T
 
 
 @define(kw_only=True)
@@ -155,8 +146,6 @@ class Font:
         if self.info.guidelines is None:
             return []
         return self.info.guidelines
-
-
 
     @property
     def path(self) -> PathLike | None:
