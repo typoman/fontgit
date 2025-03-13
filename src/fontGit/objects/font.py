@@ -9,10 +9,11 @@ class FontGit(ufoLib2.Font):
         """
         Commit_sha is optional. If no commit hash is given, then the last commit will be used.
         """
-        git_fs = GitCommitFS(path, commit_sha)
-        reader = UFOReader(git_fs, validate=validate)
+        if commit_sha is not None:
+            path = GitCommitFS(path, commit_sha)
+        reader = UFOReader(path, validate=validate)
         font = cls.read(reader, lazy=lazy)
-        font._commit_sha = git_fs.commitsha
+        font._commit_sha = commit_sha
         if not lazy:
             reader.close()
         return font

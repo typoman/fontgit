@@ -13,7 +13,7 @@ ceb327135d0123a85d6d74415f7b5ed4b086e784    init
 
 def test_font_1_no_commit_hash(sample_repo):
 	f = FontGit.open_at_commit('test_repo/fonts/font_1.ufo')
-	assert f.commitHash == sample_repo.commits[0], 'if commit_sha is not given, last commit should be used.'
+	assert f.commitHash is None, 'Font loaded directly from the file system without commit_sha should have commitHash as None.'
 
 def test_font_1_commit_hash(sample_repo, test_repo_font_1):
 	commit = sample_repo.commits[-1] # init commit
