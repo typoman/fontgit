@@ -43,3 +43,22 @@ def test_font_1_commit_groups(sample_repo, test_repo_font_1):
 	assert f.groups == {}
 	f = FontGit.open_at_commit('test_repo/fonts/font_1.ufo', commits[1]) # after adding groups
 	assert f.groups == {'public.kern2.test': ['A', 'B']}
+
+def test_font_1_diff_glyph_names_removed(sample_repo, test_repo_font_1):
+    commits = sample_repo.commits
+    f = FontGit.open_at_commit('test_repo/fonts/font_1.ufo', commits[2])
+    diff = f.diffGlyphNames()
+    assert diff == {'removed': {'E'}}
+
+
+def test_font_1_diff_glyph_names_modified(sample_repo, test_repo_font_1):
+    commits = sample_repo.commits
+    f = FontGit.open_at_commit('test_repo/fonts/font_1.ufo', commits[0])
+    diff = f.diffGlyphNames()
+    assert diff == {"modified": {'C'}}
+
+def test_font_1_diff_glyph_names_added(sample_repo, test_repo_font_1):
+    commits = sample_repo.commits
+    f = FontGit.open_at_commit('test_repo/fonts/font_1.ufo', commits[3])
+    diff = f.diffGlyphNames()
+    assert diff == {"added": {'C', 'D', 'E'}}
