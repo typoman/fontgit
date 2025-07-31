@@ -1,12 +1,23 @@
 [project]
 name = "fontGit"
-version = "0.0.4"
-description = ""
+version = "0.0.5"
+description = "A tool for versioning font files with Git."
 authors = [
-    {name = "Bahman Eslami",email = "eslami.bahman@gmail.com"}
+    {name = "Bahman Eslami", email = "eslami.bahman@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["font", "git", "ufo", "version-control"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Version Control",
+    "Topic :: Text Processing :: Fonts",
+]
 dependencies = [
     "fs (>=2.4.16,<3.0.0)",
     "ufolib2 (>=0.17.1,<0.18.0)",
@@ -22,3 +33,8 @@ pytest = "^8.3.4"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+"Homepage" = "https://github.com/typoman/fontgit"
+"Repository" = "https://github.com/typoman/fontgit"
+"Bug Tracker" = "https://github.com/typoman/fontgit/issues"

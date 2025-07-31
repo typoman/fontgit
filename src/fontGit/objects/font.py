@@ -132,3 +132,17 @@ class FontGit(ufoLib2.Font):
             prev_commit_sha = commits[prev_commit_index]
             self._previousFont = FontGit.open_at_commit(self.path, prev_commit_sha)
         return self._previousFont
+    
+    @property
+    def commits(self):
+        """Returns a list of all commit hashes for the repository."""
+        return self._repo.commits
+
+    @property
+    def commitsMessages(self):
+        """Returns a list of all commit messages for the repository."""
+        messages = []
+        for commit_hash in self.commits:
+            commit_object = self._repo.get_commit_by_hash(commit_hash)
+            messages.append(commit_object.message)
+        return messages
